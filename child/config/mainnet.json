@@ -1,0 +1,9 @@
+{
+  "network": "TOK",
+  "contracts": {
+    "TOKToken": {
+      "address": "0x0000000000000000000000000000000000001010",
+      "startBlock": 23557300
+    }
+  }
+}

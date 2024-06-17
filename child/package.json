@@ -1,0 +1,49 @@
+{
+  "name": "TOK-child-subgraphs",
+  "version": "1.0.0",
+  "description": "Subgraphs mapping for Graph-node protocol - TOK Network",
+  "scripts": {
+    "lint": "eslint --ext .ts --ext .js --ext .json .eslintrc.js src abis",
+    "lint:fix": "eslint --ext .ts --ext .js --ext .json .eslintrc.js src abis --fix",
+    "graph": "graph",
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "create": "graph create --node https://mumbai-graph.TOK.today/ TOKnetwork/token-subgraph",
+    "deploy": "graph deploy --node https://mumbai-graph.TOK.today/ --ipfs https://ipfs.infura.io:5001/ TOKnetwork/token-subgraph",
+    "prepare:mainnet": "mustache config/mainnet.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:mumbai": "mustache config/mumbai.json subgraph.template.yaml > subgraph.yaml",
+    "create-local": "graph create --node http://localhost:8020/ TOKnetwork/mumbai-child-subgraphs",
+    "remove-local": "graph remove --node http://localhost:8020/ TOKnetwork/mumbai-child-subgraphs",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs https://ipfs.infura.io:5001 TOKnetwork/mumbai-child-subgraphs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TOKnetwork/subgraphs.git"
+  },
+  "keywords": [
+    "ethereum",
+    "TOK",
+    "mumbai",
+    "token",
+    "graphql",
+    "graph"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TOKnetwork/subgraphs/issues"
+  },
+  "homepage": "https://github.com/TOKnetwork/subgraph#readme",
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "0.18.0",
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "eslint": "^7.16.0",
+    "eslint-plugin-json": "^2.1.2",
+    "eslint-plugin-unicorn": "^24.0.0",
+    "mustache": "4.0.1",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-ts": "0.18.0"
+  }
+}
